@@ -1,0 +1,35 @@
+import java.util.*;
+public class sumeven{
+	public static void main(String args[]){
+		try{
+		Scanner obj=new Scanner(System.in);
+		System.out.println("Enter a range number :");
+		int n=obj.nextInt(),a=0,b=1,ind=0;
+		if(n>0){
+		int[] arr=new int[100];
+		arr[ind++]=a;
+		arr[ind++]=b;
+		for(int i=0;i<40;i++){
+			arr[ind++]=a+b;
+			a=b;
+			b=arr[ind-1];
+		}
+		int lol=0,i=1,sum=0;
+		while(lol<n){
+			if(i%2==0){
+				sum+=arr[i];
+				lol++;
+			}
+			i++;	
+		}
+		System.out.println("Sum of even place nos is :"+sum);
+		}
+		else{
+			System.out.println("Invalid Input...");
+		}
+		}
+		catch(InputMismatchException e){
+			System.out.println("Invalid Input...");
+		}
+	}
+}
